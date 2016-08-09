@@ -1,4 +1,4 @@
-var API_KEY = 'AIzaSyArrA9xWR1AfLdZlqupAN-RIlw0_YMsc9Y';
+var API_KEY = 'YOUR API KEY';
 
 var player;
 function onYouTubeIframeAPIReady() {
