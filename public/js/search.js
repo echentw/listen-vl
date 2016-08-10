@@ -1,6 +1,7 @@
 var API_KEY = 'YOUR API KEY';
 
 var player;
+var loop = false;
 function onYouTubeIframeAPIReady() {
   var videoId = getUrlParameter('videoId');
   if (!videoId) {
@@ -12,10 +13,19 @@ function onYouTubeIframeAPIReady() {
     width: '640',
     videoId: videoId,
     events: {
-      'onReady': onPlayerReady
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
     }
   });
 }
+
+var onPlayerStateChange = function(event) {
+  // if the player is stopped and it's in loop mode, then play again
+  if (player.getPlayerState() == 0 && loop) {
+    player.stopVideo();
+    player.playVideo();
+  }
+};
 
 var onPlayerReady = function(event) {
   $('#message').html('Ready!');
@@ -30,6 +40,9 @@ $(document).ready(function() {
   });
   $('#pause-video').click(function() {
     player.pauseVideo();
+  });
+  $('#loop-video').click(function() {
+    loop = !loop;
   });
 });
 
