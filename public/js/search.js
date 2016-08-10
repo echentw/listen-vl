@@ -17,6 +17,7 @@ var onYouTubeIframeAPIReady = function() {
       'onStateChange': onPlayerStateChange
     }
   });
+
 };
 
 var onPlayerStateChange = function(event) {
@@ -60,6 +61,22 @@ $(document).ready(function() {
       $('#loop-status').text('not looping');
     }
   });
+  $('#progress-bar').change(function() {
+    var duration = player.getDuration();
+    var progress = this.value;
+    var seconds = Math.floor(duration * progress / 100);
+    player.seekTo(seconds);
+  });
+
+  setInterval(function() {
+    var currentTime = player.getCurrentTime();
+    var duration = player.getDuration();
+    $('#current-time').text(Math.floor(currentTime));
+    $('#duration').text(Math.floor(duration));
+
+    var progress = Math.floor(currentTime / duration * 100);
+    $('#progress-bar').val(String(progress));
+  }, 1000);
 });
 
 // Load the youtube search API
