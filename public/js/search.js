@@ -2,7 +2,7 @@ var API_KEY = 'YOUR API KEY';
 
 var player;
 var loop = false;
-function onYouTubeIframeAPIReady() {
+var onYouTubeIframeAPIReady = function() {
   var videoId = getUrlParameter('videoId');
   if (!videoId) {
     videoId = 'cO_U-jcvQT8';
@@ -17,32 +17,48 @@ function onYouTubeIframeAPIReady() {
       'onStateChange': onPlayerStateChange
     }
   });
-}
+};
 
 var onPlayerStateChange = function(event) {
   // if the player is stopped and it's in loop mode, then play again
-  if (player.getPlayerState() == 0 && loop) {
-    player.stopVideo();
-    player.playVideo();
+  if (player.getPlayerState() == 0) {
+    if (loop) {
+      player.stopVideo();
+      player.playVideo();
+    } else {
+      player.stopVideo();
+      $('#play-status').text('stopped');
+    }
   }
 };
 
 var onPlayerReady = function(event) {
   $('#message').html('Ready!');
-}
+};
 
 $(document).ready(function() {
+  $('#play-status').text('stopped');
+  $('#loop-status').text('not looping');
+
   $('#play-video').click(function() {
     player.playVideo();
+    $('#play-status').text('playing');
   });
   $('#stop-video').click(function() {
     player.stopVideo();
+    $('#play-status').text('stopped');
   });
   $('#pause-video').click(function() {
     player.pauseVideo();
+    $('#play-status').text('paused');
   });
   $('#loop-video').click(function() {
     loop = !loop;
+    if (loop) {
+      $('#loop-status').text('looping');
+    } else {
+      $('#loop-status').text('not looping');
+    }
   });
 });
 
@@ -55,9 +71,9 @@ var googleApiClientReady = function() {
 
 $(document).ready(function() {
   var search = function() {
-    var q = $('#query').val();
+    var query = $('#query').val();
     var request = gapi.client.youtube.search.list({
-      q: q,
+      q: query,
       part: 'snippet',
       maxResults: 10
     });
@@ -72,7 +88,9 @@ $(document).ready(function() {
 
         var link = 'http://localhost:3000?videoId=' + videoId;
 
-        $('#search-results').append('<a href="' + link + '" class="video-link" id="' + videoId + '">' + title + '</a><br>');
+        $('#search-results').append(
+          '<a href="' + link + '" class="video-link" id="' + videoId + '">' + title + '</a><br>'
+        );
       }
 
       $('a').click(function(e) {
@@ -82,7 +100,8 @@ $(document).ready(function() {
           width: '640',
           videoId: e.target.id,
           events: {
-            'onReady': onPlayerReady
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
           }
         });
       });

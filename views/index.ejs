@@ -2,6 +2,7 @@
   <head>
     <title>Search</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
     <script src="/js/util.js"></script>
     <script src="/js/search.js"></script>
     <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
@@ -14,11 +15,22 @@
     </div>
 
     <div id="message">Loading...</div>
-    <button id="play-video">Play</button>
-    <button id="stop-video">Stop</button>
-    <button id="pause-video">Pause</button>
-    <button id="loop-video">Loop</button>
-    <script src="/js/index.js"></script>
+    <div id="current-video-title"></div>
+
+    <table>
+      <tr>
+        <th>
+          <button id="play-video">Play</button>
+          <button id="pause-video">Pause</button>
+          <button id="stop-video">Stop</button>
+        </th>
+        <td><div id="play-status"></div></td>
+      </tr>
+      <tr>
+        <th><button id="loop-video">Loop</button></th>
+        <td><div id="loop-status"></div></td>
+      </tr>
+    </table>
 
     <!-- SEARCH -->
     <input id="query" placeholder="search" type="text"/>
