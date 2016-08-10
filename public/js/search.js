@@ -17,7 +17,6 @@ var onYouTubeIframeAPIReady = function() {
       'onStateChange': onPlayerStateChange
     }
   });
-
 };
 
 var onPlayerStateChange = function(event) {
@@ -34,7 +33,7 @@ var onPlayerStateChange = function(event) {
 };
 
 var onPlayerReady = function(event) {
-  $('#message').html('Ready!');
+  $('#video-title').text('Title: ' + player.getVideoData().title);
 };
 
 $(document).ready(function() {
