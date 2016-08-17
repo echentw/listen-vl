@@ -1,5 +1,3 @@
-var API_KEY = 'YOUR API KEY';
-
 var player;
 var loop = false;
 var onYouTubeIframeAPIReady = function() {
@@ -22,7 +20,7 @@ var onPlayerStateChange = function(event) {
   // if the player is stopped and it's in loop mode, then play again
   if (player.getPlayerState() == 0) {
     if (loop) {
-      player.stopVideo();
+      player.seekTo(0);
       player.playVideo();
     } else {
       player.stopVideo();

@@ -1,3 +1,5 @@
+var API_KEY = 'YOUR API KEY';
+
 $(document).ready(function() {
   var tag = document.createElement('script');
   tag.src = "https://www.youtube.com/iframe_api";
