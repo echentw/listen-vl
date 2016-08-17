@@ -34,6 +34,7 @@ var onPlayerStateChange = function(event) {
 
 var onPlayerReady = function(event) {
   $('#video-title').text('Title: ' + player.getVideoData().title);
+  player.setVolume(100);
 };
 
 $(document).ready(function() {
