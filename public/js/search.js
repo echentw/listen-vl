@@ -1,4 +1,4 @@
-var API_KEY = 'AIzaSyCpXqH5rb9_sKwLpDi9XnN3gIpce94LAg0';
+var API_KEY = 'YOUR API KEY';
 
 var player;
 var loop = false;
