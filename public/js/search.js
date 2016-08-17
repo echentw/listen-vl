@@ -7,7 +7,6 @@ var onYouTubeIframeAPIReady = function() {
   if (!videoId) {
     videoId = 'cO_U-jcvQT8';
   }
-
   player = new YT.Player('player', {
     height: '390',
     width: '640',
@@ -68,11 +67,15 @@ $(document).ready(function() {
       $('#loop-status').text('not looping');
     }
   });
-  $('#progress-bar').change(function() {
+  // $('#progress-bar').change(function() {
+  $('#progress-bar').on('input', function() {
     var duration = player.getDuration();
     var progress = this.value;
     var seconds = Math.floor(duration * progress / 100);
     player.seekTo(seconds);
+  });
+  $('#volume-bar').on('input', function() {
+    player.setVolume(this.value);
   });
 
   setInterval(function() {
@@ -103,7 +106,7 @@ $(document).ready(function() {
     var request = gapi.client.youtube.search.list({
       q: query,
       part: 'snippet',
-      maxResults: 10
+      maxResults: 15
     });
 
     request.execute(function(response) {
