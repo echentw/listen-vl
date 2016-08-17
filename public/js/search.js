@@ -77,12 +77,16 @@ $(document).ready(function() {
 
   setInterval(function() {
     var currentTime = player.getCurrentTime();
-    var duration = player.getDuration();
     $('#current-time').text(Math.floor(currentTime));
-    $('#duration').text(Math.floor(duration));
 
-    var progress = Math.floor(currentTime / duration * 100);
-    $('#progress-bar').val(String(progress));
+    var duration = player.getDuration();
+    if (duration > 0) {
+      $('#duration').text(Math.floor(duration));
+      var progress = Math.floor(currentTime / duration * 100);
+      $('#progress-bar').val(String(progress));
+    } else {
+      $('#progress-bar').val('0');
+    }
   }, 1000);
 });
 
@@ -134,5 +138,10 @@ $(document).ready(function() {
 
   $('#search-button').click(function() {
     search();
+  });
+  $('#query').on('keydown', function(e) {
+    if (e.which == 13) {
+      search();
+    }
   });
 });

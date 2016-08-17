@@ -5,3 +5,7 @@ a {
 button {
   width: 50px;
 }
+
+#progress-bar {
+  width: 400px;
+}
