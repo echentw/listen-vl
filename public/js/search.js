@@ -28,6 +28,7 @@ var onPlayerStateChange = function(event) {
     } else {
       player.stopVideo();
       $('#play-status').text('stopped');
+      $('#play-pause-video-btn').text('Play');
     }
   }
 };
@@ -37,20 +38,27 @@ var onPlayerReady = function(event) {
 };
 
 $(document).ready(function() {
+  $('#play-pause-video-btn').text('Play');
   $('#play-status').text('stopped');
   $('#loop-status').text('not looping');
 
-  $('#play-video').click(function() {
-    player.playVideo();
-    $('#play-status').text('playing');
-  });
-  $('#stop-video').click(function() {
-    player.stopVideo();
-    $('#play-status').text('stopped');
-  });
-  $('#pause-video').click(function() {
-    player.pauseVideo();
-    $('#play-status').text('paused');
+  $('#play-pause-video-btn').click(function() {
+    // -1: unstarted
+    //  0: ended
+    //  1: playing
+    //  2: paused
+    //  3: buffering
+    //  5: video cued
+    var state = player.getPlayerState();
+    if (state == -1 || state == 2 || state == 5) {
+      player.playVideo();
+      $('#play-status').text('playing');
+      $('#play-pause-video-btn').text('Pause');
+    } else if (state == 1 || state == 3) {
+      player.pauseVideo();
+      $('#play-status').text('paused');
+      $('#play-pause-video-btn').text('Play');
+    }
   });
   $('#loop-video').click(function() {
     loop = !loop;
