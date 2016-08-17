@@ -2,8 +2,21 @@ a {
   color: #00B7FF;
 }
 
+.video-container {
+  display: none;
+}
+
 button {
   width: 50px;
+}
+
+button#show-video-btn {
+  width: 100px;
+  margin-bottom: 5px;
+}
+
+table {
+  padding-bottom: 10px;
 }
 
 #progress-bar {

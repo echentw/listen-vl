@@ -41,6 +41,16 @@ $(document).ready(function() {
   $('#play-status').text('stopped');
   $('#loop-status').text('not looping');
 
+  $('#show-video-btn').click(function() {
+    var $container = $('.video-container')
+    if ($container.is(':visible')) {
+      $container.hide();
+      $('#show-video-btn').text('Show Video');
+    } else {
+      $container.show();
+      $('#show-video-btn').text('Hide Video');
+    }
+  });
   $('#play-pause-video-btn').click(function() {
     // -1: unstarted
     //  0: ended
@@ -59,7 +69,7 @@ $(document).ready(function() {
       $('#play-pause-video-btn').text('Play');
     }
   });
-  $('#loop-video').click(function() {
+  $('#loop-btn').click(function() {
     loop = !loop;
     if (loop) {
       $('#loop-status').text('looping');
@@ -67,7 +77,6 @@ $(document).ready(function() {
       $('#loop-status').text('not looping');
     }
   });
-  // $('#progress-bar').change(function() {
   $('#progress-bar').on('input', function() {
     var duration = player.getDuration();
     var progress = this.value;

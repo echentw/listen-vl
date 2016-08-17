@@ -11,13 +11,17 @@
   <body>
 
     <!-- PLAYER -->
-    <div hidden>
+    <div id="video-title"></div>
+
+    <button id="show-video-btn">Show Video</button>
+    <div class="video-container">
       <div id="player"></div>
     </div>
 
-    <div id="video-title"></div>
+    <div>
+      <span id="current-time"></span> sec / <span id="duration"></span> sec<br>
+    </div>
 
-    <span id="current-time"></span> sec / <span id="duration"></span> sec<br>
     <input type="range" id="progress-bar" min="0" max="100" value="0"><br>
 
     Volume: <input type="range" id="volume-bar" min="0" max="100" value="100">
@@ -28,7 +32,7 @@
         <td><div id="play-status"></div></td>
       </tr>
       <tr>
-        <th><button id="loop-video">Loop</button></th>
+        <th><button id="loop-btn">Loop</button></th>
         <td><div id="loop-status"></div></td>
       </tr>
     </table>
