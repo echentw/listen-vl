@@ -114,9 +114,7 @@ $(document).ready(function() {
         var videoId = item.id.videoId;
         var title = item.snippet.title;
 
-        // var link = 'http://localhost:9999?videoId=' + videoId;
         var link = '/?videoId=' + videoId;
-
         $('#search-results').append(
           '<a href="' + link + '" class="video-link" id="' + videoId + '">' + title + '</a><br>'
         );
