@@ -111,13 +111,26 @@ $(document).ready(function() {
 
       for (var i = 0; i < response.result.items.length; ++i) {
         var item = response.result.items[i];
-        var videoId = item.id.videoId;
         var title = item.snippet.title;
 
-        var link = '/?videoId=' + videoId;
-        $('#search-results').append(
-          '<a href="' + link + '" class="video-link" id="' + videoId + '">' + title + '</a><br>'
-        );
+        if (item.id.videoId) {
+          var videoId = item.id.videoId;
+          var link = '/?videoId=' + videoId;
+          $('#search-results').append(
+            '<div class="search-result">' +
+              '<span class="result-label">Video:</span>' +
+              '<a href="' + link + '" class="video-link" id="' + videoId + '">' + title + '</a><br>' +
+            '</div>'
+          );
+        } else if (item.id.playlistId) {
+          var playlistId = item.id.playlistId;
+          $('#search-results').append(
+            '<div class="search-result">' +
+              '<span class="result-label">Playlist:</span>' +
+              '<span>' + title + '</span><br>' +
+            '</div>'
+          );
+        }
       }
 
       $('a').click(function(e) {

@@ -9,3 +9,12 @@ button {
 #progress-bar {
   width: 400px;
 }
+
+.search-result {
+  padding-top: 5px;
+}
+
+.result-label {
+  float: left;
+  width: 60px;
+}
