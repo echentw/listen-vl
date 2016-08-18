@@ -3,6 +3,7 @@ $(document).ready(function() {
     var query = $('#query').val();
     var request = gapi.client.youtube.search.list({
       q: query,
+      type: 'video',
       part: 'snippet',
       maxResults: 15
     });
@@ -19,16 +20,9 @@ $(document).ready(function() {
           var link = '/?videoId=' + videoId;
           $('#search-results').append(
             '<div class="search-result">' +
-              '<span class="result-label">Video:</span>' +
-              '<a href="' + link + '" class="video-link" id="' + videoId + '">' + title + '</a><br>' +
-            '</div>'
-          );
-        } else if (item.id.playlistId) {
-          var playlistId = item.id.playlistId;
-          $('#search-results').append(
-            '<div class="search-result">' +
-              '<span class="result-label">Playlist:</span>' +
-              '<span>' + title + '</span><br>' +
+              '<a href="' + link + '" class="video-link" id="' + videoId + '">' +
+                title +
+              '</a><br>' +
             '</div>'
           );
         }
