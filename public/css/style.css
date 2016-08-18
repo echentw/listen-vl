@@ -1,9 +1,15 @@
 a:link {
   color: #1692d4;
+  text-decoration: none;
 }
 
 a:visited {
   color: #660099;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .video-container {

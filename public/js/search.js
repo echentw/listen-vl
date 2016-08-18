@@ -27,19 +27,6 @@ $(document).ready(function() {
           );
         }
       }
-
-      $('a').click(function(e) {
-        console.log(e.target.id);
-        player = new YT.Player('player', {
-          height: '390',
-          width: '640',
-          videoId: e.target.id,
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-      });
     });
   };
 
