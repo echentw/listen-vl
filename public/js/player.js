@@ -3,7 +3,7 @@ var loop = false;
 var onYouTubeIframeAPIReady = function() {
   var videoId = getUrlParameter('videoId');
   if (!videoId) {
-    videoId = 'cO_U-jcvQT8';
+    videoId = 'moSFlvxnbgk';
   }
   player = new YT.Player('player', {
     height: '390',
