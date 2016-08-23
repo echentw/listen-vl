@@ -38,4 +38,23 @@ $(document).ready(function() {
       search();
     }
   });
+
+  // Logic for autocomplete.
+  $('#query').autocomplete({
+    source: function(request, callback) {
+      var query = request.term;
+      $.ajax({
+        dataType: 'jsonp',
+        url: 'http://suggestqueries.google.com/complete/search?q=' + query + '&client=youtube&ds=yt',
+        success: function(data) {
+          var suggestions = [];
+          $.each(data[1], function(key, val) {
+            console.log(key + ', ' + val);
+            suggestions.push(val[0]);
+          });
+          callback(suggestions);
+        }
+      });
+    }
+  });
 });
