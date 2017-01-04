@@ -24,8 +24,8 @@ var onPlayerStateChange = function(event) {
       player.playVideo();
     } else {
       player.stopVideo();
-      $('#play-status').text('stopped');
-      $('#play-pause-video-btn').text('Play');
+      $('#play-pause-btn').removeClass('fa-pause-circle');
+      $('#play-pause-btn').addClass('fa-play-circle');
     }
   }
 };
@@ -36,7 +36,7 @@ var onPlayerReady = function(event) {
 };
 
 $(document).ready(function() {
-  $('#play-pause-video-btn').text('Play');
+  // $('#play-pause-btn').text('Play');
   $('#play-status').text('stopped');
   $('#loop-status').text('not looping');
 
@@ -50,7 +50,7 @@ $(document).ready(function() {
       $('#show-video-btn').text('Hide Video');
     }
   });
-  $('#play-pause-video-btn').click(function() {
+  $('#play-pause-btn').click(function() {
     // -1: unstarted
     //  0: ended
     //  1: playing
@@ -60,12 +60,12 @@ $(document).ready(function() {
     var state = player.getPlayerState();
     if (state == -1 || state == 2 || state == 5) {
       player.playVideo();
-      $('#play-status').text('playing');
-      $('#play-pause-video-btn').text('Pause');
+      $('#play-pause-btn').removeClass('fa-play-circle');
+      $('#play-pause-btn').addClass('fa-pause-circle');
     } else if (state == 1 || state == 3) {
       player.pauseVideo();
-      $('#play-status').text('paused');
-      $('#play-pause-video-btn').text('Play');
+      $('#play-pause-btn').removeClass('fa-pause-circle');
+      $('#play-pause-btn').addClass('fa-play-circle');
     }
   });
   $('#loop-btn').click(function() {

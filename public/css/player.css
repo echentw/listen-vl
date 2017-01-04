@@ -34,6 +34,7 @@
 
 .video-container {
   display: none;
+  padding-bottom: 20px;
 }
 
 #progress-bar {
@@ -56,4 +57,30 @@
 .progress-time {
   position: absolute;
   right: 15%;
+}
+
+.controls {
+  position: relative;
+  margin-top: 50px;
+  width: 100%;
+  height: 70px;
+  background-color: #b3ffff; /* light blue */
+  margin-bottom: 100px;
+}
+
+.play-loop-buttons {
+  text-align: center;
+  position: absolute;
+  top: 15px;
+  left: 30%;
+}
+
+#play-pause-btn {
+  margin-right: 20px;
+}
+
+.volume-control {
+  position: absolute;
+  top: 15px;
+  right: 10%;
 }
