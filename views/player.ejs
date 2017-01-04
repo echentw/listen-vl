@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <title>ListenVL</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="/css/player.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="icon" href="/img/favicon.ico?v=2">
+    <script src="https://use.fontawesome.com/44b53099ee.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/search.js"></script>
+    <script src="/js/player.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+  </head>
+  <body>
+
+    <div class="search-container">
+      <h1 class="app-name">ListenVL</h1>
+
+      <div class="search" id="query">
+        <input class="search" id="search-box" placeholder="Enter song name" type="text"/>
+        <button class="search" id="search-button" disabled>
+          <i class="search fa fa-search" id="search-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div id="search-results">
+      </div>
+    </div>
+
+    <div class="player-container">
+      <h1 id="video-title"></h1>
+
+      <div class="video-container">
+        <div id="player"></div>
+      </div>
+
+      <input type="range" id="progress-bar" min="0" max="100" value="0">
+      <button id="show-video-btn">
+        <div id="show-video-message">Show video</div>
+      </button>
+
+      <div class="progress-time">
+        <span id="current-time"></span> sec / <span id="duration"></span> sec<br>
+      </div>
+
+      <div class="controls">
+        <button id="play-pause-video-btn"></button><br>
+        <button id="loop-btn">Loop</button>
+        Volume: <input type="range" id="volume-bar" min="0" max="100" value="100">
+      </div>
+
+      <!--
+
+      <i class="fa fa-play-circle" aria-hidden="true"></i><br>
+      <i class="fa fa-volume-up" aria-hidden="true"></i><br>
+      <i class="fa fa-volume-down" aria-hidden="true"></i><br>
+      <i class="fa fa-volume-off" aria-hidden="true"></i><br>
+      <i class="fa fa-pause-circle" aria-hidden="true"></i><br>
+
+      Volume: <input type="range" id="volume-bar" min="0" max="100" value="100">
+
+      <table>
+        <tr>
+          <th><button id="play-pause-video-btn"></button></th>
+          <td><div id="play-status"></div></td>
+        </tr>
+        <tr>
+          <th><button id="loop-btn">Loop</button></th>
+          <td><div id="loop-status"></div></td>
+        </tr>
+      </table>
+      -->
+    </div>
+  </body>
+</html>

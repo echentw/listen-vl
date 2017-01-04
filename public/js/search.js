@@ -3,7 +3,7 @@ $(document).ready(function() {
 
   var search = function() {
     // Make the search box slide up.
-    $('.listen-vl-container').css('margin', '0% 25%');
+    $('.search-container').css('margin', '0% 10%');
 
     // Hide the autocomplete menu.
     AUTOCOMPLETE = false;
@@ -26,7 +26,7 @@ $(document).ready(function() {
 
         if (item.id.videoId) {
           var videoId = item.id.videoId;
-          var link = '/?videoId=' + videoId;
+          var link = '/listen?id=' + videoId;
           $('#search-results').append(
             '<div class="search-result">' +
               '<a href="' + link + '" class="video-link" id="' + videoId + '">' +

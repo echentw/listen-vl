@@ -1,0 +1,59 @@
+.search-container {
+  position: relative;
+  width: 80%;
+  margin: 0% 10%;
+}
+
+.app-name {
+  text-align: center;
+}
+
+.search#search-box {
+  width: 93%;
+  margin-right: 2px;
+}
+
+.search#search-button {
+  position: absolute;
+  width: 7%;
+  right: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.search#search-icon {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.player-container {
+  position: relative;
+  width: 80%;
+  margin: 0% 10%;
+}
+
+.video-container {
+  display: none;
+}
+
+#progress-bar {
+  width: 85%;
+  margin-right: 2px;
+}
+
+#show-video-btn {
+  position: absolute;
+  width: 10%;
+  right: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#show-video-message {
+  font-size: 75%;
+}
+
+.progress-time {
+  position: absolute;
+  right: 15%;
+}

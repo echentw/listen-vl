@@ -1,7 +1,7 @@
 var player;
 var loop = false;
 var onYouTubeIframeAPIReady = function() {
-  var videoId = getUrlParameter('videoId');
+  var videoId = getUrlParameter('id');
   if (!videoId) {
     videoId = 'moSFlvxnbgk';
   }
