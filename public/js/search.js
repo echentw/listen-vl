@@ -1,6 +1,15 @@
 $(document).ready(function() {
+  var AUTOCOMPLETE = true;
+
   var search = function() {
-    var query = $('#query').val();
+    // Make the search box slide up.
+    $('.listen-vl-container').css('margin', '0% 25%');
+
+    // Hide the autocomplete menu.
+    $(".ui-autocomplete").hide();
+    AUTOCOMPLETE = false;
+
+    var query = $('#search-box').val();
     var request = gapi.client.youtube.search.list({
       q: query,
       type: 'video',
@@ -33,16 +42,21 @@ $(document).ready(function() {
   $('#search-button').click(function() {
     search();
   });
-  $('#query').on('keydown', function(e) {
+  $('#search-box').on('keydown', function(e) {
     if (e.which == 13) {
       search();
+    } else {
+      AUTOCOMPLETE = true;
     }
   });
 
   // Logic for autocomplete.
-  $('#query').autocomplete({
+  $('#search-box').autocomplete({
     source: function(request, callback) {
       var query = request.term;
+      if (!AUTOCOMPLETE) {
+        return;
+      }
       $.ajax({
         dataType: 'jsonp',
         url: 'http://suggestqueries.google.com/complete/search?q=' + query + '&client=youtube&ds=yt',
