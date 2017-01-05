@@ -64,7 +64,6 @@
   margin-top: 50px;
   width: 100%;
   height: 70px;
-  background-color: #b3ffff; /* light blue */
   margin-bottom: 100px;
 }
 
@@ -76,11 +75,47 @@
 }
 
 #play-pause-btn {
-  margin-right: 20px;
+  margin-right: 50px;
+  color: blue;
+}
+
+#loop-btn {
+  color: blue;
+}
+
+#play-pause-btn:hover {
+  color: darkblue;
+}
+
+#loop-btn:hover {
+  color: darkblue;
 }
 
 .volume-control {
   position: absolute;
+  height: 100%;
+  width: 200px;
+  right: 5%;
+}
+
+#volume-icon {
+  position: absolute;
   top: 15px;
-  right: 10%;
+  margin-right: 10px;
+  left: 0px;
+}
+
+#volume-bar {
+  position: absolute;
+  top: 15px;
+  right: 0px;
+  width: 140px;
+}
+
+.fa {
+  color: blue;
+}
+
+.fa-volume-off {
+  color: darkblue;
 }

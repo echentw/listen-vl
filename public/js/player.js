@@ -36,8 +36,6 @@ var onPlayerReady = function(event) {
 };
 
 $(document).ready(function() {
-  // $('#play-pause-btn').text('Play');
-  $('#play-status').text('stopped');
   $('#loop-status').text('not looping');
 
   $('#show-video-btn').click(function() {
@@ -84,6 +82,16 @@ $(document).ready(function() {
   });
   $('#volume-bar').on('input', function() {
     player.setVolume(this.value);
+    $('#volume-icon').removeClass('fa-volume-up');
+    $('#volume-icon').removeClass('fa-volume-down');
+    $('#volume-icon').removeClass('fa-volume-off');
+    if (this.value == 0) {
+      $('#volume-icon').addClass('fa-volume-off');
+    } else if (this.value < 50) {
+      $('#volume-icon').addClass('fa-volume-down');
+    } else {
+      $('#volume-icon').addClass('fa-volume-up');
+    }
   });
 
   setInterval(function() {
