@@ -1,0 +1,28 @@
+.search-container {
+  position: relative;
+  width: 80%;
+  margin: 20% 10%;
+
+  -webkit-transition-property: margin; /* Safari */
+  -webkit-transition-duration: 0.5s; /* Safari */
+  transition-property: margin;
+  transition-duration: 0.5s;
+
+  h1 {
+    text-align: center;
+  }
+
+  .query {
+    #search-box {
+      width: 90%;
+      margin-right: 2px;
+    }
+    #search-button {
+      position: absolute;
+    }
+    #search-icon {
+      position: absolute;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
