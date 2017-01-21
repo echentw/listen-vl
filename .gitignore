@@ -2,3 +2,4 @@ npm-debug.log
 keys.json
 node_modules/
 .sass-cache/
+public/css/
