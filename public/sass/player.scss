@@ -1,3 +1,5 @@
+@import "modules/colors";
+
 @import "partials/range";
 
 @import "vendor/skeleton";
@@ -81,18 +83,19 @@
       top: 15px;
       left: 30%;
 
-      #play-pause-btn {
-        margin-right: 50px;
-        color: blue;
+      .control-button {
+        color: $primary-color;
         &:hover {
-          color: darkblue;
+          color: $secondary-color;
         }
       }
+
+      #play-pause-btn {
+        @extend .control-button;
+        margin-right: 50px;
+      }
       #loop-btn {
-        color: blue;
-        &:hover {
-          color: darkblue;
-        }
+        @extend .control-button;
       }
     }
 
@@ -110,7 +113,7 @@
       }
       input#volume-bar {
         position: absolute;
-        top: 15px;
+        top: 25px;
         right: 0px;
         width: 140px;
       }
@@ -119,9 +122,9 @@
 }
 
 .fa {
-  color: blue;
+  color: $primary-color;
 }
 
 .fa-volume-off {
-  color: darkblue;
+  color: $secondary-color;
 }
