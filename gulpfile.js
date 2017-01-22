@@ -41,3 +41,7 @@ gulp.task('sass', function() {
     }))
     .pipe(gulp.dest(paths.styles.dest));
 });
+
+gulp.task('build', ['sass'], function() {
+  // Currently the only thing to do is compile SASS.
+});
