@@ -15,21 +15,19 @@
   transition-duration: 0.5s;
 
   h1 {
+    color: $primary-color;
     text-align: center;
   }
 
   .query {
     #search-box {
-      width: 90%;
-      margin-right: 2px;
-    }
-    #search-button {
-      position: absolute;
+      width: 100%;
     }
     #search-icon {
       color: $primary-color;
       position: absolute;
-      transform: translate(-50%, -50%);
+      right: 10px;
+      transform: translate(0px, -25px);
     }
   }
 }

@@ -11,24 +11,19 @@
   margin: 0% 10%;
 
   h1 {
+    color: $primary-color;
     text-align: center;
   }
 
   .query {
     #search-box {
-      width: 93%;
-      margin-right: 2px;
-    }
-    #search-button {
-      position: absolute;
-      width: 7%;
-      right: 0px;
-      padding-left: 0px;
-      padding-right: 0px;
+      width: 100%;
     }
     #search-icon {
+      color: $primary-color;
       position: absolute;
-      transform: translate(-50%, -50%);
+      right: 10px;
+      transform: translate(0px, -25px);
     }
   }
 }
@@ -83,7 +78,7 @@
       top: 15px;
       left: 30%;
 
-      .control-button {
+      .button-colors {
         color: $primary-color;
         &:hover {
           color: $secondary-color;
@@ -91,11 +86,11 @@
       }
 
       #play-pause-btn {
-        @extend .control-button;
+        @extend .button-colors;
         margin-right: 50px;
       }
       #loop-btn {
-        @extend .control-button;
+        @extend .button-colors;
       }
     }
 
@@ -104,6 +99,13 @@
       height: 100%;
       width: 200px;
       right: 5%;
+
+      .fa {
+        color: $primary-color;
+      }
+      .fa-volume-off {
+        color: $secondary-color;
+      }
 
       i#volume-icon {
         position: absolute;
@@ -119,12 +121,4 @@
       }
     }
   }
-}
-
-.fa {
-  color: $primary-color;
-}
-
-.fa-volume-off {
-  color: $secondary-color;
 }
