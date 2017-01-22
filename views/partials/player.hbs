@@ -1,0 +1,27 @@
+<div class="player-container">
+  <h1 id="video-title"></h1>
+
+  <div class="video-container">
+    <div id="player"></div>
+  </div>
+
+  <input type="range" id="progress-bar" min="0" max="100" value="0">
+  <button id="show-video-btn">
+    <div id="show-video-message">Show video</div>
+  </button>
+
+  <div class="progress-time">
+    <span id="current-time"></span> sec / <span id="duration"></span> sec<br>
+  </div>
+
+  <div class="controls">
+    <div class="play-loop-buttons">
+      <i class="fa fa-play-circle fa-3x" id="play-pause-btn" aria-hidden="true"></i>
+      <i class="fa fa-repeat fa-3x" id="loop-btn" aria-hidden="true"></i>
+    </div>
+    <div class="volume-control">
+      <i class="fa fa-volume-up fa-3x" id="volume-icon" aria-hidden="true"></i>
+      <input type="range" id="volume-bar" min="0" max="100" value="100">
+    </div>
+  </div>
+</div>
