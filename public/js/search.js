@@ -1,5 +1,6 @@
 $(document).ready(function() {
   var AUTOCOMPLETE = true;
+  var ANIMATE = true;
 
   var search = function() {
     // Make the search box slide up.
@@ -17,9 +18,7 @@ $(document).ready(function() {
       maxResults: 20
     });
 
-    request.execute(function(response) {
-      $('#search-results').empty();
-
+    var showResults = function(response) {
       for (var i = 0; i < response.result.items.length; ++i) {
         var item = response.result.items[i];
         var title = item.snippet.title;
@@ -35,6 +34,18 @@ $(document).ready(function() {
             '</div>'
           );
         }
+      }
+    };
+
+    request.execute(function(response) {
+      $('#search-results').empty();
+      if (ANIMATE) {
+        ANIMATE = false;
+        setTimeout(function() {
+          showResults(response);
+        }, 500);
+      } else {
+        showResults(response);
       }
     });
   };

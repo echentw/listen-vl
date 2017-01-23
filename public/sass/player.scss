@@ -28,6 +28,13 @@
       transform: translate(0px, -25px);
     }
   }
+
+  #search-results {
+    -webkit-transition-property: height; /* Safari */
+    -webkit-transition-duration: 0.5s; /* Safari */
+    transition-property: height;
+    transition-duration: 0.5s;
+  }
 }
 
 .player-container {
