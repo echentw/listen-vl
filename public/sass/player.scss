@@ -49,8 +49,14 @@
 
   .video-container {
     text-align: center;
-    display: none;
     padding-bottom: 20px;
+    visibility: hidden;
+    height: 0px;
+
+    -webkit-transition-property: height; // Safari
+    -webkit-transition-duration: 0.5s; // Safari
+    transition-property: height;
+    transition-duration: 0.5s;
   }
 
   #progress-bar {

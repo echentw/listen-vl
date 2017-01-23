@@ -1,3 +1,6 @@
+var PLAYER_HEIGHT = '390px';
+var PLAYER_WIDTH = '640px';
+
 var player;
 var loop = false;
 var onYouTubeIframeAPIReady = function() {
@@ -6,8 +9,8 @@ var onYouTubeIframeAPIReady = function() {
     videoId = 'moSFlvxnbgk';
   }
   player = new YT.Player('player', {
-    height: '390',
-    width: '640',
+    height: PLAYER_HEIGHT,
+    width: PLAYER_WIDTH,
     videoId: videoId,
     events: {
       'onReady': onPlayerReady,
@@ -36,16 +39,19 @@ var onPlayerReady = function(event) {
 };
 
 $(document).ready(function() {
-  $('#loop-status').text('not looping');
-
   $('#show-video-btn').click(function() {
     var $container = $('.video-container')
-    if ($container.is(':visible')) {
-      $container.hide();
-      $('#show-video-btn').text('Show Video');
+
+    if ($container.css('visibility') === 'hidden') {
+      $container.css('height', PLAYER_HEIGHT);
+      setTimeout(function() {
+        $container.css('visibility', 'visible');
+        $('#show-video-btn').text('Hide Video');
+      }, 500);
     } else {
-      $container.show();
-      $('#show-video-btn').text('Hide Video');
+      $container.css('visibility', 'hidden');
+      $container.css('height', '0px');
+      $('#show-video-btn').text('Show Video');
     }
   });
   $('#play-pause-btn').click(function() {
