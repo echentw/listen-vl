@@ -36,6 +36,13 @@
     -webkit-transition-duration: 0.5s; // Safari
     transition-property: height;
     transition-duration: 0.5s;
+
+    .video-link {
+      color: $link-color;
+      &:hover {
+        color: $link-hover-color;
+      }
+    }
   }
 }
 

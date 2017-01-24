@@ -31,4 +31,13 @@
       transform: translate(0px, -25px);
     }
   }
+
+  .search-results {
+    .video-link {
+      color: $link-color;
+      &:hover {
+        color: $link-hover-color;
+      }
+    }
+  }
 }
