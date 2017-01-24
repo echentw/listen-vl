@@ -26,7 +26,7 @@ $(document).ready(function() {
         if (item.id.videoId) {
           var videoId = item.id.videoId;
           var link = '/listen?id=' + videoId;
-          $('#search-results').append(
+          $('.search-results').append(
             '<div class="search-result">' +
               '<a href="' + link + '" class="video-link" id="' + videoId + '">' +
                 title +
@@ -38,9 +38,10 @@ $(document).ready(function() {
     };
 
     request.execute(function(response) {
-      $('#search-results').empty();
+      $('.search-results').empty();
       if (ANIMATE) {
         ANIMATE = false;
+        $('.search-results').css('height', '500px');
         setTimeout(function() {
           showResults(response);
         }, 500);

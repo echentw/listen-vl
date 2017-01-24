@@ -29,9 +29,11 @@
     }
   }
 
-  #search-results {
-    -webkit-transition-property: height; /* Safari */
-    -webkit-transition-duration: 0.5s; /* Safari */
+  .search-results {
+    height: 0px;
+
+    -webkit-transition-property: height; // Safari
+    -webkit-transition-duration: 0.5s; // Safari
     transition-property: height;
     transition-duration: 0.5s;
   }
