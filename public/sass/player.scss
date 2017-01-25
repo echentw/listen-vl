@@ -1,4 +1,5 @@
 @import "modules/colors";
+@import "modules/dimensions";
 
 @import "partials/range";
 
@@ -9,7 +10,8 @@
 .search-container {
   position: relative;
   width: 80%;
-  margin: 0% 10%;
+  margin: 0% auto;
+  max-width: $max-width;
 
   h1 {
     color: $primary-color;
@@ -49,7 +51,8 @@
 .player-container {
   position: relative;
   width: 80%;
-  margin: 0% 10%;
+  margin: 0% auto;
+  max-width: $max-width;
 
   #video-title {
     color: $secondary-color;

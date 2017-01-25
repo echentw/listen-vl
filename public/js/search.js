@@ -4,7 +4,7 @@ $(document).ready(function() {
 
   var search = function() {
     // Make the search box slide up.
-    $('.search-container').css('margin', '0% 10%');
+    $('.search-container').css('margin', '0% auto');
 
     // Hide the autocomplete menu.
     AUTOCOMPLETE = false;
