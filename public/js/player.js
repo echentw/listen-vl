@@ -1,8 +1,9 @@
 var PLAYER_HEIGHT = '390px';
 var PLAYER_WIDTH = '640px';
 
+var LOOPING = false;
+
 var player;
-var loop = false;
 var onYouTubeIframeAPIReady = function() {
   var videoId = getUrlParameter('id');
   if (!videoId) {
@@ -22,7 +23,7 @@ var onYouTubeIframeAPIReady = function() {
 var onPlayerStateChange = function(event) {
   // if the player is stopped and it's in loop mode, then play again
   if (player.getPlayerState() == 0) {
-    if (loop) {
+    if (LOOPING) {
       player.seekTo(0);
       player.playVideo();
     } else {
@@ -73,11 +74,11 @@ $(document).ready(function() {
     }
   });
   $('#loop-btn').click(function() {
-    loop = !loop;
-    if (loop) {
-      $('#loop-status').text('looping');
+    LOOPING = !LOOPING;
+    if (LOOPING) {
+      $('#loop-indicator').css('visibility', 'visible');
     } else {
-      $('#loop-status').text('not looping');
+      $('#loop-indicator').css('visibility', 'hidden');
     }
   });
   $('#progress-bar').on('input', function() {

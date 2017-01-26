@@ -122,6 +122,11 @@
       #loop-btn {
         @extend .button-colors;
       }
+      #loop-indicator {
+        visibility: hidden;
+        color: $primary-color;
+        font-size: 50%;
+      }
     }
 
     .volume-control {
