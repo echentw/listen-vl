@@ -12,6 +12,7 @@
   width: 80%;
   margin: 0% auto;
   max-width: $max-width;
+  min-width: $min-width;
 
   h1 {
     color: $primary-color;
@@ -53,6 +54,7 @@
   width: 80%;
   margin: 0% auto;
   max-width: $max-width;
+  min-width: $min-width;
 
   #video-title {
     color: $secondary-color;

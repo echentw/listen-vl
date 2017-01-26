@@ -46,12 +46,12 @@ $(document).ready(function() {
       $container.css('height', PLAYER_HEIGHT);
       setTimeout(function() {
         $container.css('visibility', 'visible');
-        $('#show-video-btn').text('Hide Video');
+        $('#show-video-message').text('Hide Video');
       }, 500);
     } else {
       $container.css('visibility', 'hidden');
       $container.css('height', '0px');
-      $('#show-video-btn').text('Show Video');
+      $('#show-video-message').text('Show Video');
     }
   });
   $('#play-pause-btn').click(function() {
