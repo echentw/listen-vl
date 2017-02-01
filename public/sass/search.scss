@@ -26,14 +26,14 @@
   .query {
     #search-box {
       width: 100%;
+      height: $search-bar-height;
     }
     #search-icon {
       color: $primary-color;
       position: absolute;
       right: 10px;
-
-      -webkit-transform: translate(0px, -25px); // Safari
-      transform: translate(0px, -25px);
+      height: $search-icon-height;
+      top: calc(#{$search-bar-height} * 1.25 + #{$search-icon-height});
     }
   }
 
