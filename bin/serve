@@ -1,4 +1,0 @@
-#!/bin/bash
-
-node node_modules/gulp/bin/gulp build
-npm start
