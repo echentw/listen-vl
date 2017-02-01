@@ -11,12 +11,14 @@
     </div>
   {{/if}}
 
-  <input type="range" id="progress-bar" min="0" max="100" value="0">
-  {{#unless mobile}}
-    <button id="show-video-btn">
-      <div id="show-video-message">Show video</div>
-    </button>
-  {{/unless}}
+  <div class="range-and-show-hide">
+    <input type="range" id="progress-bar" min="0" max="100" value="0">
+    {{#unless mobile}}
+      <button id="show-video-btn">
+        <div id="show-video-message">Show video</div>
+      </button>
+    {{/unless}}
+  </div>
 
   <div class="progress-time">
     <span id="current-time"></span> sec / <span id="duration"></span> sec<br>

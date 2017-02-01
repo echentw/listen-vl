@@ -31,6 +31,8 @@
       color: $primary-color;
       position: absolute;
       right: 10px;
+
+      -webkit-transform: translate(0px, -25px); // Safari
       transform: translate(0px, -25px);
     }
   }
