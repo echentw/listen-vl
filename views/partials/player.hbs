@@ -1,14 +1,22 @@
 <div class="player-container">
   <h1 id="video-title"></h1>
 
-  <div class="video-container">
-    <div id="player"></div>
-  </div>
+  {{#if mobile}}
+    <div class="video-container" style="visibility: visible; height: 390px;">
+      <div id="player"></div>
+    </div>
+  {{else}}
+    <div class="video-container" style="visibility: hidden; height: 0px;">
+      <div id="player"></div>
+    </div>
+  {{/if}}
 
   <input type="range" id="progress-bar" min="0" max="100" value="0">
-  <button id="show-video-btn">
-    <div id="show-video-message">Show video</div>
-  </button>
+  {{#unless mobile}}
+    <button id="show-video-btn">
+      <div id="show-video-message">Show video</div>
+    </button>
+  {{/unless}}
 
   <div class="progress-time">
     <span id="current-time"></span> sec / <span id="duration"></span> sec<br>
